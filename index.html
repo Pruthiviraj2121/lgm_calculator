@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="Updisplay" placeholder="Arithmetic Operation" readonly />
+      <input type="text" id="display" placeholder="Result" readonly />
+      <div class="buttons">
+        <button onclick="Clicked('7')">7</button>
+        <button onclick="Clicked('8')">8</button>
+        <button onclick="Clicked('9')">9</button>
+        <button onclick="Clicked('+')">+</button>
+        <button onclick="Clicked('4')">4</button>
+        <button onclick="Clicked('5')">5</button>
+        <button onclick="Clicked('6')">6</button>
+        <button onclick="Clicked('-')">-</button>
+        <button onclick="Clicked('1')">1</button>
+        <button onclick="Clicked('2')">2</button>
+        <button onclick="Clicked('3')">3</button>
+        <button onclick="Clicked('*')">*</button>
+        <button onclick="Clicked('0')">0</button>
+        <button onclick="Clicked('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="Clicked('/')">/</button>
+        <button onclick="clearDisplay()">C</button>
+      </div>
+    </div>
+    <script>
+      let currentInput = "";//we used let instead of var so to change and access it globally
+
+      function Clicked(value) {
+        currentInput += value;
+        document.getElementById("display").value = currentInput;
+      }
+
+      function clearDisplay() {
+        currentInput = ""; 
+        document.getElementById("display").value = "";
+        document.getElementById("Updisplay").value = "";
+      }
+
+      function calculate() {
+        try {
+          const result = eval(currentInput); //eval() what it does is take the expression and evaluates it or say it takes as a string and evaluates
+          document.getElementById("display").value = result;
+          document.getElementById("Updisplay").value = currentInput;
+          document.getElementById("Updisplay").style.fontSize = "16px";
+          currentInput = String(result);
+        } catch (error) { //output shows in display input 
+          document.getElementById("display").value = "Error";
+          currentInput = ""; 
+        }
+      }
+    </script>
+  </body>
+</html>

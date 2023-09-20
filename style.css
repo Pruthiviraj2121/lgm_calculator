@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url("https://cdn1.vectorstock.com/i/1000x1000/17/50/abstract-background-calculator-vector-11601750.jpg");
+    /* background-repeat: no-repeat;
+    background-size: 100% 100%; */
+}
+
+.calculator {
+    width: 300px;
+    margin: auto;
+    margin-top: 130px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #064789;
+    box-shadow: 5px 5px 5px 5px #427aa1;
+}
+#Updisplay{
+    width: 90%;
+    padding: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+    background-color: #ebf2fa;
+    border-radius: 8px;
+}
+
+#display {
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: right;
+    background-color: #ebf2fa;
+    border-radius: 8px;
+}
+
+.buttons {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    display: grid;
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: #ebf2fa;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #427aa1;
+}
